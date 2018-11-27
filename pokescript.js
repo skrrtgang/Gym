@@ -47,6 +47,8 @@ let tylersUrl = ["http://fizal.me/pokeapi/api/v2/name/azumarill.json","http://fi
 let carlossUrl = ["https://fizal.me/pokeapi/api/v2/id/6.json","https://fizal.me/pokeapi/api/v2/id/25.json", "https://fizal.me/pokeapi/api/v2/id/395.json"] ;
 let raysUrl = ["http://fizal.me/pokeapi/api/v2/name/azumarill.json","http://fizal.me/pokeapi/api/v2/name/spheal.json", "http://fizal.me/pokeapi/api/v2/name/leafeon.json"] ;
 let carlosPokemonImg = ["http://play.pokemonshowdown.com/sprites/xyani/pikachu.gif","http://play.pokemonshowdown.com/sprites/xyani/charizard.gif", "http://play.pokemonshowdown.com/sprites/xyani/empoleon.gif"]
+let tylerPokemonImage=["img src="rayquaza.jpg", "img src="giratina.png", "img src="dialga.png"];
+let tylerTrainerImage = ["img src="pimp.png" style="float: left; width: 45%; margin-right: 1%; margin-bottom: 0.5em;"]; //Trainer Name
 // let pokeball = document.getElementById('preview_image');
 let pokeballSketch = document.getElementById('poke_image');
 function fetchPokemonData(thaturl) {
