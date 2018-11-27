@@ -44,12 +44,11 @@ let mikiasPokeImage = ["pikachugif.gif", "kakuna.gif", "sandshrew.png"];
 let mikiasTrainerImage = "mikias.png";//Trainer name is Mikias.
 let neeyasUrl = ["http://fizal.me/pokeapi/api/v2/name/azumarill.json","http://fizal.me/pokeapi/api/v2/name/spheal.json", "http://fizal.me/pokeapi/api/v2/name/leafeon.json"] ;
 let tylersUrl = ["http://fizal.me/pokeapi/api/v2/name/azumarill.json","http://fizal.me/pokeapi/api/v2/name/spheal.json", "http://fizal.me/pokeapi/api/v2/name/leafeon.json"] ;
-let carlossUrl = ["http://fizal.me/pokeapi/api/v2/name/azumarill.json","http://fizal.me/pokeapi/api/v2/name/spheal.json", "http://fizal.me/pokeapi/api/v2/name/leafeon.json"] ;
+let carlossUrl = ["https://fizal.me/pokeapi/api/v2/id/6.json","https://fizal.me/pokeapi/api/v2/id/25.json", "https://fizal.me/pokeapi/api/v2/id/395.json"] ;
 let raysUrl = ["http://fizal.me/pokeapi/api/v2/name/azumarill.json","http://fizal.me/pokeapi/api/v2/name/spheal.json", "http://fizal.me/pokeapi/api/v2/name/leafeon.json"] ;
-
+let carlosPokemonImg = ["http://play.pokemonshowdown.com/sprites/xyani/pikachu.gif","http://play.pokemonshowdown.com/sprites/xyani/charizard.gif", "http://play.pokemonshowdown.com/sprites/xyani/empoleon.gif"]
 // let pokeball = document.getElementById('preview_image');
 let pokeballSketch = document.getElementById('poke_image');
-
 function fetchPokemonData(thaturl) {
       axios.get(thaturl)
       .then(function (response) {
