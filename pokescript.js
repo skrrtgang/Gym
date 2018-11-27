@@ -17,11 +17,15 @@ var whichPlayer5 = document.getElementById('player5');
 // whichPlayer4.addEventListener('click', sendTrainerName('tyler'));
 // whichPlayer5.addEventListener('click', sendTrainerName('ray'));
 //
-// function sendTrainerName(trainerName){
-//     // take me to the pokedex.html page
-//     selectedPlayer = trainerName;
-// }
 
+function sendTrainerName(trainerName){
+    // take me to the pokedex.html page
+    selectedPlayer = trainerName;
+}
+let trainerNameWhat = "";
+localStorage["key"] = sendTrainerName(trainerNameWhat);
+
+let playerNameFromIndex = localStorage["key"];
 // My background Pokemon Video When the page loads
 window.onload = function myFunction() {
   var vid = document.getElementById("back_video");
@@ -117,7 +121,7 @@ class Pokemon{
           displayAbility.innerHTML = "Anonymous";
         }else{
         displayAbility.innerHTML = result[0];
-            ability_description.innerHTML = abilitiesInside[0];
+        ability_description.innerHTML = abilitiesInside[0];
       }
       });
       ability_button_two.addEventListener('click', function(){
@@ -162,6 +166,7 @@ class Pokemon{
 
 
 let sketchRand = 0;
+let rand = 0;
 //This Class is to Modify Trainer Object when its method(s) is also called
 class Trainer{
   // multiple pokemon, user picks one, array of Pokemon to choose from
@@ -183,8 +188,13 @@ class Trainer{
 
     // Method named 'get' that Pokemon object housing information for the pokemon it found
     get(){
-    let rand = Math.floor(Math.random()*url.length);
+    // let rand = Math.floor(Math.random()*url.length);
+    rand++;
+    if(rand>2){
+      rand = 0;
+    }
     sketchRand = rand;
+    console.log("get:\t",rand);
     if(selectedPlayer==='neeya'){
       fetchPokemonData(neeyasUrl[rand]);
     }else if(selectedPlayer==='mikias'){
@@ -200,18 +210,15 @@ class Trainer{
     }
 }
 
-let pokemonTrainerName = document.getElementById('player_name');
-
 //utilizing trainer class to display various trainer and its Pokemon
 let trainer = new Trainer('mikias');
 
-// let thatPokemon = new Pokemon(name, hp, attack, defense, potential);
-
+let pokemonTrainerName = document.getElementById('player_name');
+//This function showTrainerData() assigns who the Trainer is and his name, trainerName is the parameter where the player name goes
 function showTrainerData(trainerName){
   // let nameThatTrainer = sendTrainerName('mikias');
   // selectedPlayer dont forget
   pokemonTrainerName.innerHTML = trainerName;
-
 }
 //calling the function to add more pokemon data to your trainer class
 showTrainerData('mikias');
