@@ -1,6 +1,6 @@
 //this is for index.html page, logic to select particular trainer that the user wants to select.
 
-var selectedPlayer = 'mikias';
+let selectedPlayer = 'mikias';
 // if(location.index.html){
 
 var whichPlayer1 = document.getElementById('player1');
@@ -20,13 +20,13 @@ var whichPlayer5 = document.getElementById('player5');
 
 function sendTrainerName(trainerName){
     // take me to the pokedex.html page
-    selectedPlayer = trainerName;
+selectedPlayer = trainerName;
 }
 let trainerNameWhat = "";
 localStorage["key"] = sendTrainerName(trainerNameWhat);
 
 let playerNameFromIndex = localStorage["key"];
-// My background Pokemon Video When the page loads
+My background Pokemon Video When the page loads
 window.onload = function myFunction() {
   var vid = document.getElementById("back_video");
   vid.autoplay = true;
@@ -49,8 +49,8 @@ let mikiasTrainerImage = "mikias.png";//Trainer name is Mikias.
 let neeyasUrl = ["http://fizal.me/pokeapi/api/v2/name/azumarill.json","http://fizal.me/pokeapi/api/v2/name/spheal.json", "http://fizal.me/pokeapi/api/v2/name/leafeon.json"] ;
 let tylersUrl = ["http://fizal.me/pokeapi/api/v2/name/azumarill.json","http://fizal.me/pokeapi/api/v2/name/spheal.json", "http://fizal.me/pokeapi/api/v2/name/leafeon.json"] ;
 let carlossUrl = ["https://fizal.me/pokeapi/api/v2/id/6.json","https://fizal.me/pokeapi/api/v2/id/25.json", "https://fizal.me/pokeapi/api/v2/id/395.json"] ;
+let carlosPokemonImg = ["http://play.pokemonshowdown.com/sprites/xyani/pikachu.gif","http://play.pokemonshowdown.com/sprites/xyani/charizard.gif", "http://play.pokemonshowdown.com/sprites/xyani/empoleon.gif"];
 let raysUrl = ["http://fizal.me/pokeapi/api/v2/name/azumarill.json","http://fizal.me/pokeapi/api/v2/name/spheal.json", "http://fizal.me/pokeapi/api/v2/name/leafeon.json"] ;
-let carlosPokemonImg = ["http://play.pokemonshowdown.com/sprites/xyani/pikachu.gif","http://play.pokemonshowdown.com/sprites/xyani/charizard.gif", "http://play.pokemonshowdown.com/sprites/xyani/empoleon.gif"]
 // let pokeball = document.getElementById('preview_image');
 let pokeballSketch = document.getElementById('poke_image');
 function fetchPokemonData(thaturl) {
@@ -214,15 +214,33 @@ class Trainer{
 //utilizing trainer class to display various trainer and its Pokemon
 let trainer = new Trainer('mikias');
 
-let pokemonTrainerName = document.getElementById('player_name');
 //This function showTrainerData() assigns who the Trainer is and his name, trainerName is the parameter where the player name goes
+let pokemonTrainerName = document.getElementById('player_name');
+let trainerImage = document.getElementById('left_image');
+
 function showTrainerData(trainerName){
   // let nameThatTrainer = sendTrainerName('mikias');
   // selectedPlayer dont forget
-  pokemonTrainerName.innerHTML = trainerName;
+  let trainerName = "";
+  if(tainerName === "mikias"){
+    pokemonTrainerName.innerHTML = "Mikias";
+    trainerImage.src = mikiasTrainerImage;
+  } else if(tainerName === "carlos"){
+    pokemonTrainerName.innerHTML = "Carlos";
+    trainerImage.src = "carlos.png";
+  } else if(trainerName === "tyler"){
+    pokemonTrainerName.innerHTML = "Tyler";
+    trainerImage.src = "mikias.png";
+  } else if(trainerName === "neeya"){
+    pokemonTrainerName.innerHTML = "Neeya";
+    trainerImage.src = "mikias.png";
+  } else if(trainerName === "roy"){
+    pokemonTrainerName.innerHTML = "Roy";
+    trainerImage.src = "howrang.png";
+  }
 }
+window.onload = showTrainerData(selectedPlayer);
 //calling the function to add more pokemon data to your trainer class
-showTrainerData('mikias');
 
 //function to move to next Pokemon and its abilities
 function gotoNextPokemon(){
